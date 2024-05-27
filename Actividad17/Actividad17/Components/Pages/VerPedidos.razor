@@ -1,0 +1,53 @@
+﻿@page "/pedidos"
+@inject NavigationManager _navigator
+@using Actividad17.Data;
+@rendermode InteractiveServer
+
+<h3>Pedidos</h3>
+
+<div class="mb-3">
+    <button class="btn btn-primary" @onclick=VerPersonas>Ver Personas</button>
+    <button class="btn btn-primary" @onclick=VerProductos>Ver Productos</button>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Persona</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Producto</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+        <tr>
+            <td>Nombre Persona</td>
+            <td>2024-05-26</td>
+            <td>14:30</td>
+            <td>Nombre Producto</td>
+            <td>
+                <button class="btn btn-sm btn-primary" title="Modificar">Modificar</button>
+                <button class="btn btn-sm btn-danger" title="Eliminar">Eliminar</button>
+            </td>
+        </tr>
+      
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public int PersonaId { get; set; }
+
+    private void VerPersonas()
+    {
+        _navigator.NavigateTo("/Personas");
+    }
+
+    private void VerProductos()
+    {
+        _navigator.NavigateTo("/Personas");
+    }
+
+}
